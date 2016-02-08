@@ -10,8 +10,10 @@ var connect = require('gulp-connect');
 var open = require('gulp-open');
 
 //example task
-{
-    gulp.task('example', function() {
-        gutil.log("example started...");
-    });
-}
+var TypeScriptSources = [
+    './Scripts/**/*.ts',
+    './typings/**/*.ts'];
+    
+var HTMLSources = ['./**/*.html'];
+
+var CSSSources = ['./Content/**/*.css'];
