@@ -1,0 +1,1 @@
+{"version":3,"sources":["_reference.ts"],"names":[],"mappings":"AAAA,2CAA2C;AAE3C,yCAAyC","file":"_reference.js","sourcesContent":["/// <reference path=\"../typings/tsd.d.ts\"/>\n\n/// <reference path=\"objects/person.ts\"/>"],"sourceRoot":"/source/"}
