@@ -17,3 +17,20 @@ var TypeScriptSources = [
 var HTMLSources = ['./**/*.html'];
 
 var CSSSources = ['./Content/**/*.css'];
+
+gulp.task('transpile', function () {
+    gutil.log("transpiling...");
+
+    var tsResult = gulp.src(TypeScriptSources)
+        .pipe(sourcemaps.init())
+        .pipe(tsc(tscProject))
+        .on('error', gutil.log);
+
+    tsResult.dts.pipe(gulp.dest('./Scripts/'));
+    return tsResult.js
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('./Scripts/'))
+        .on('error', gutil.log)
+        .pipe(connect.reload());
+
+});
