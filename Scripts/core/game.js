@@ -52,7 +52,7 @@ function init() {
     scene.add(axes);
     console.log("Added Axis Helper to scene...");
     //Add a Plane to the Scene
-    plane = new gameObject(new PlaneGeometry(16, 16, 1, 1), new LambertMaterial({ color: 0xe79b61 }), 0, 0, 0);
+    plane = new gameObject(new PlaneGeometry(20, 20, 1, 1), new LambertMaterial({ color: 0x00ffff }), 0, 0, 0);
     plane.rotation.x = -0.5 * Math.PI;
     scene.add(plane);
     console.log("Added Plane Primitive to scene...");
@@ -133,4 +133,5 @@ function setupCamera() {
     camera.lookAt(new Vector3(0, 0, 0));
     console.log("Finished setting up Camera...");
 }
+
 //# sourceMappingURL=game.js.map

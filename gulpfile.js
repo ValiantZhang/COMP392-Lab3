@@ -34,3 +34,32 @@ gulp.task('transpile', function () {
         .pipe(connect.reload());
 
 });
+
+gulp.task("html", function () {
+    gutil.log("html changed...");
+    gulp.src(HTMLSources)
+        .pipe(connect.reload());
+});
+
+gulp.task('css', function(){
+   gutil.log("css files changed...");
+   gulp.src(CSSSources)
+   .pipe(connect.reload()); 
+});
+
+// This task watches .ts .js and .html files for any changes
+gulp.task("watch", function () {
+    gulp.watch(TypeScriptSources, ['transpile']);
+    gulp.watch(HTMLSources, ['html']);
+    gulp.watch(CSSSources, ['css']);
+});
+
+gulp.task("connect", function () {
+    connect.server({
+        root: './',
+        livereload: true
+    });
+});
+
+
+gulp.task("default", ["transpile", "html", "css", "connect", "watch"]);
